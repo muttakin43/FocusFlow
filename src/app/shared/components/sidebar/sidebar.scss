@@ -1,0 +1,88 @@
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background: #ffffff;
+    border-right: 1px solid #e0e0e0;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px 0;
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.03);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 0 20px 24px;
+
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.logo mat-icon {
+  color: #6366f1;
+  font-size: 28px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  padding: 16px 10px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 14px;
+
+  text-decoration: none;
+
+  color: #111827;
+  font-size: 14px;
+  font-weight: 500;
+
+  border-radius: 12px;
+
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  background: #f3f4f6;
+  transform: translateX(3px);
+}
+
+.nav-item.active {
+  background: #eef2ff;
+  color: #4338ca;
+  font-weight: 600;
+}
+
+.nav-item span {
+  white-space: nowrap;
+}
+
+
+
+.nav-item {
+  position: relative;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 10px;
+}
