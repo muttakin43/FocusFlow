@@ -1,0 +1,67 @@
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+.add-task-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  mat-icon {
+   
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  span {
+    line-height: 1;
+  }
+}
+
+.stat-roww{
+   grid-column: span 4;
+}
+
+.today-page {
+  padding: 20px;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat-card {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.stat-label {
+  display: block;
+  color: #888;
+  font-size: 12px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+}
+.filter-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.filter-row mat-form-field {
+  min-width: 220px;
+  flex: 1;
+}

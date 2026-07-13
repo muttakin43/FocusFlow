@@ -1,0 +1,125 @@
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 18px;
+  border-radius: 14px;
+  background: #151922;
+  border: 1px solid rgba(255,255,255,.08);
+  margin-bottom: 14px;
+}
+
+.task-content {
+  flex: 1;
+}
+
+.task-title {
+  margin: 0 0 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.task-meta {
+   display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.priority-tag {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.priority-tag.high {
+  background: rgba(255,0,0,.15);
+  color: #ff6b6b;
+}
+
+.priority-tag.medium {
+  background: rgba(255,165,0,.15);
+  color: #ffb74d;
+}
+
+.priority-tag.low {
+  background: rgba(0,255,0,.15);
+  color: #81c784;
+}
+
+.meta-item {
+   display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 13px;
+  color: #bdbdbd;
+}
+.meta-item mat-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #9ca3af;
+}
+
+.task-tags {
+  margin-bottom: 10px;
+}
+
+.tag {
+  display: inline-block;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(33,150,243,.15);
+  color: #64b5f6;
+  font-size: 12px;
+}
+
+.task-notes {
+  color: #d0d6e0;
+  font-size: 14px;
+}
+
+.task-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.action-btn {
+  min-width: 80px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.edit-btn {
+  background: rgba(33,150,243,.15);
+  color: #64b5f6;
+}
+
+.delete-btn {
+  background: rgba(244,67,54,.15);
+  color: #ff6b6b;
+}
+
+.edit-btn:hover {
+  background: rgba(33,150,243,.25);
+}
+
+.delete-btn:hover {
+  background: rgba(244,67,54,.25);
+}

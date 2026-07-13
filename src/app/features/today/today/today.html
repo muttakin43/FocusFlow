@@ -1,1 +1,123 @@
-<p>today works!</p>
+<div class="stat-roww"><app-quote-card></app-quote-card></div>
+<div class="today-page">
+
+  <!-- Stat cards -->
+  <div class="stat-row">
+    <div class="stat-card">
+      <span class="stat-label">Total tasks</span>
+      <span class="stat-value">{{ totalCount }}</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Completed</span>
+      <span class="stat-value">{{ completedCount }}</span>
+      <span class="stat-sub success">{{ totalCount ? (completedCount / totalCount * 100) : 0 | number:'1.0-0' }}% done</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Remaining</span>
+      <span class="stat-value">{{ totalCount - completedCount }}</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Overdue</span>
+      <span class="stat-value">{{ overdueCount }}</span>
+      <span class="stat-sub warn">Needs attention</span>
+    </div>
+  </div>
+
+  <!-- Task list -->
+  <div class="task-section">
+    <div class="section-head">
+      <h3>Today's tasks</h3>
+      <button
+  mat-flat-button
+  color="primary"
+  class="add-task-btn"
+  (click)="openAddTask()">
+
+  <mat-icon>add</mat-icon>
+  Add task
+
+</button>
+         
+    </div>
+
+      <div class="filter-row">
+
+      <!-- Search -->
+
+      <mat-form-field appearance="outline">
+
+        <mat-label>Search Tasks</mat-label>
+
+        <mat-icon matPrefix>search</mat-icon>
+
+        <input
+          matInput
+          [(ngModel)]="searchTerm"
+          (input)="onSearchChange()">
+
+      </mat-form-field>
+
+      <!-- Priority -->
+
+      <mat-form-field appearance="outline">
+
+        <mat-label>Priority</mat-label>
+
+        <mat-select
+          [(value)]="selectedPriority"
+          (selectionChange)="onPriorityChange()">
+
+          <mat-option value="all">All</mat-option>
+          <mat-option value="high">High</mat-option>
+          <mat-option value="medium">Medium</mat-option>
+          <mat-option value="low">Low</mat-option>
+
+        </mat-select>
+
+      </mat-form-field>
+
+      <!-- Status -->
+
+      <mat-form-field appearance="outline">
+
+        <mat-label>Status</mat-label>
+
+        <mat-select
+          [(value)]="selectedStatus"
+          (selectionChange)="onStatusChange()">
+
+          <mat-option value="all">All</mat-option>
+          <mat-option value="pending">Pending</mat-option>
+          <mat-option value="completed">Completed</mat-option>
+
+        </mat-select>
+
+      </mat-form-field>
+
+    </div>
+
+    <!-- Empty State -->
+
+    <div
+      *ngIf="filteredTasks.length === 0"
+      class="empty-state">
+
+      <mat-icon>inbox</mat-icon>
+
+      <p>
+        No matching tasks found.
+      </p>
+
+    </div>
+
+    <!-- *ngFor: render one TaskCard per task -->
+    <app-task-card
+     *ngFor="let task of filteredTasks"
+      [task]="task"
+      (toggle)="toggleTask($event)"
+      (edit)="openEditTask($event)"
+      (delete)="deleteTask($event)">
+    </app-task-card>
+  </div>
+
+</div>

@@ -1,0 +1,29 @@
+
+
+<div class="weather-card">
+
+  <div *ngIf="loading" class="loading">
+    <mat-spinner diameter="24"></mat-spinner>
+    <span>Loading weather...</span>
+  </div>
+
+  <div *ngIf="error" class="error">
+    <mat-icon>cloud_off</mat-icon>
+    <span>Weather unavailable</span>
+  </div>
+
+  <div *ngIf="weather && !loading">
+    <p class="city">{{ weather.name }}</p>
+    <div class="temp-row">
+      <span class="temp">{{ weather.main.temp | number:'1.0-0' }}°C</span>
+      <img [src]="'https://openweathermap.org/img/wn/' + weather.weather[0].icon + '@2x.png'"
+           [alt]="weather.weather[0].description" />
+    </div>
+  
+    <div class="details">
+      <span>Humidity: {{ weather.main.humidity }}%</span>
+      
+    </div>
+  </div>
+
+</div>

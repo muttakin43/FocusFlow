@@ -9,4 +9,5 @@ import { Topbar } from './shared/components/topbar/topbar';
 })
 export class App {
   protected readonly title = signal('focusflow');
+  
 }

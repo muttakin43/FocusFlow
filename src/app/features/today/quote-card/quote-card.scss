@@ -1,0 +1,66 @@
+.quote-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: #1e1e2e;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.quote-icon {
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+  color: #f0a500;
+  flex-shrink: 0;
+}
+
+.quote-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.quote-text {
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  font-style: normal;
+  margin: 0 0 4px;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.quote-author {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  margin: 0;
+}
+
+.refresh-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.3);
+  flex-shrink: 0;
+  transition: color 0.2s;
+
+  &:hover {
+    color: rgba(255,255,255,0.7);
+  }
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}

@@ -1,1 +1,36 @@
-<p>topbar works!</p>
+<div class="topbar">
+  
+  <div class="topbar-left">
+    <h2 class="greeting">Good morning, Muttakin</h2>
+    <p class="date">{{ today | date:'EEEE, MMMM d, y' }}</p>
+     <p class="holiday" *ngIf="todayHoliday">
+      🎉 {{ todayHoliday.name }}
+    </p>
+  </div>
+  
+<div class="topbar-center">
+    <app-weather-card></app-weather-card>
+  </div>
+
+
+  <div class="topbar-right">
+    <mat-form-field appearance="outline" subscriptSizing="dynamic"  class="search">
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput placeholder="Search tasks..." />
+    </mat-form-field>
+    
+<button
+  mat-icon-button
+  class="theme-btn"
+  (click)="toggleTheme()">
+
+  <mat-icon>
+    {{ isDarkMode ? 'light_mode' : 'dark_mode' }}
+  </mat-icon>
+
+</button>
+    <button mat-icon-button>
+      <mat-icon>notifications</mat-icon>
+    </button>
+  </div>
+</div>

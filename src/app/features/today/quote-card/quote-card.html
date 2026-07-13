@@ -1,0 +1,10 @@
+<div class="quote-card" *ngIf="quote">
+  <mat-icon class="quote-icon">format_quote</mat-icon>
+  <div class="quote-content">
+    <p class="quote-text">{{ quote.content }}</p>
+    <p class="quote-author">— {{ quote.author }}</p>
+  </div>
+  <button class="refresh-btn" (click)="refresh()" matTooltip="New quote">
+    <mat-icon>refresh</mat-icon>
+  </button>
+</div>

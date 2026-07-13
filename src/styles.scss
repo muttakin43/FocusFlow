@@ -37,3 +37,18 @@ body {
   height: 100%;
 }
 /* You can add global styles to this file, and also import other style files */
+.dark-theme {
+
+  --bg: #111827;
+  --card: #1f2937;
+  --text: #ffffff;
+
+}
+
+.light-theme {
+
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #111827;
+
+}
