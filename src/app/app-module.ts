@@ -22,6 +22,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TaskFormModal } from './shared/components/task-form-modal/task-form-modal';
+import { Weekly } from './features/weekly/weekly/weekly';
+import { Timer } from './features/timer/timer/timer';
+import { Settings } from './features/settings/settings/settings';
+import { Onboarding } from './features/onboarding/onboarding/onboarding';
 
 @NgModule({
   declarations: [
@@ -34,10 +38,14 @@ import { TaskFormModal } from './shared/components/task-form-modal/task-form-mod
     WeatherCard,
     QuoteCard,
     TaskFormModal,
+    Weekly,
+    Timer,
+    Settings,
+    Onboarding,
   ],
   imports: [
     BrowserModule,
-MatSnackBarModule,
+    MatSnackBarModule,
     AppRoutingModule,
     MatFormFieldModule,
     MatInputModule,

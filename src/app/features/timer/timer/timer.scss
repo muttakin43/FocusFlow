@@ -1,0 +1,33 @@
+.timer-page{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:70vh;
+}
+
+.timer-card{
+  background:#1e1e2e;
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  width:450px;
+}
+
+.timer-display{
+  font-size:72px;
+  font-weight:700;
+  margin:30px 0;
+}
+
+.timer-actions{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+}
+
+.timer-actions button{
+  padding:12px 30px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+}

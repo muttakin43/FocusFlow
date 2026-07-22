@@ -1,0 +1,22 @@
+.onboarding-container{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.onboarding-card{
+  width:500px;
+  background:#1e1e2e;
+  padding:30px;
+  border-radius:20px;
+}
+
+.form-group{
+  margin-bottom:20px;
+}
+
+input{
+  width:100%;
+  padding:12px;
+}

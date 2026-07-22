@@ -40,16 +40,27 @@ private cdr: ChangeDetectorRef,
 
     this.taskService.tasks$.subscribe(tasks => {
 
-      this.tasks = tasks;
-       this.applyFilters();
+  const today =
+    new Date()
+      .toISOString()
+      .split('T')[0];
 
-      this.totalCount = tasks.length;
+  this.tasks = tasks.filter(
+    task => task.dueDate === today
+  );
 
-      this.completedCount =
-        tasks.filter(t => t.completed).length;
-        this.cdr.detectChanges();
+  this.applyFilters();
 
-    });
+  this.totalCount = this.tasks.length;
+
+  this.completedCount =
+    this.tasks.filter(
+      t => t.completed
+    ).length;
+
+  this.cdr.detectChanges();
+
+});
 
   }
 

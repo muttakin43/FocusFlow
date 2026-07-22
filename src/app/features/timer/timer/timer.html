@@ -1,0 +1,31 @@
+<div class="timer-page">
+
+  <div class="timer-card">
+
+    <h2>Focus Timer</h2>
+
+    <div class="timer-display">
+
+      {{ minutes | number:'2.0' }}:
+      {{ seconds | number:'2.0' }}
+
+    </div>
+
+    <div class="timer-actions">
+
+  <button (click)="startTimer()">
+    Start
+  </button>
+
+  <button (click)="pauseTimer()">
+    Pause
+  </button>
+
+  <button (click)="resetTimer()">
+    Reset
+  </button>
+
+</div>
+  </div>
+
+</div>

@@ -1,0 +1,100 @@
+<div class="weekly-page">
+
+  <div class="page-header">
+
+    <h2>Weekly Planner</h2>
+
+    <p>
+      Plan your upcoming week
+    </p>
+
+  </div>
+
+  <div class="stats-grid">
+
+   <div class="stat-card">
+  <div class="icon">📋</div>
+  <h2>{{ weeklyTasksCount }}</h2>
+  <p>Total Tasks</p>
+</div>
+
+   <div class="stat-card">
+  <div class="icon">✅</div>
+  <h2>{{ completedWeeklyTasks }}</h2>
+  <p>Completed</p>
+</div>
+
+ <div class="stat-card">
+  <div class="icon">⏳</div>
+  <h2>{{ weeklyTasksCount - completedWeeklyTasks }}</h2>
+  <p>Pending</p>
+</div>
+
+  </div>
+
+  <div class="week-grid">
+
+   <div
+  class="day-card"
+  *ngFor="let day of getNext7Days()"
+  [class.today]="isToday(day)"
+>
+
+      <div class="day-header">
+
+        <h3>
+          {{ day | date:'EEEE' }}
+        </h3>
+
+        <span>
+          {{ day | date:'dd MMM' }}
+        </span>
+
+      </div>
+
+      <div class="tasks">
+
+       <div
+  class="task-item"
+  *ngFor="let task of getTasksForDate(day)"
+>
+
+  <div>
+
+    <div class="task-title">
+      {{ task.title }}
+    </div>
+
+    <small>
+      {{ task.dueTime }}
+    </small>
+
+  </div>
+
+  <span
+    class="priority"
+    [ngClass]="task.priority"
+  >
+    {{ task.priority }}
+  </span>
+
+</div>
+
+        <div
+          class="empty-state"
+          *ngIf="
+            getTasksForDate(day).length === 0
+          "
+        >
+
+          No Tasks
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
